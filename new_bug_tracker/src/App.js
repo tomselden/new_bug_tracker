@@ -6,15 +6,32 @@ import "./App.css";
 function App() {
   const [addIssue, setAddIssue] = useState(true);
 
+  function showAddIssue() {
+    setAddIssue(true);
+  }
+
+  function showCurrentIssue() {
+    setAddIssue(false);
+  }
+
   return (
     <div className="App">
       <h1>Bug Tracker</h1>
       <div className="grey-card-container">
         {addIssue ? <AddIssue /> : <CurrentIssue />}
       </div>
-      <div>
-        <button>Current Issues</button>
-        <button>Add Issue</button>
+      <div class="view-selection-div">
+        <button class="view-button" onClick={() => showCurrentIssue()}>
+          Current Issues
+        </button>
+        <button
+          class="view-button active-button"
+          onClick={() => {
+            showAddIssue();
+          }}
+        >
+          Add Issue
+        </button>
       </div>
     </div>
   );

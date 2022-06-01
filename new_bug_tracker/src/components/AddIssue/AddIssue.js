@@ -8,7 +8,7 @@ function AddIssue() {
     <div className="add-issue">
       <form>
         <label>
-          Description<input type="text"></input>
+          Description<input type="text" placeholder="Issue Description..."></input>
         </label>
         <label>
           Assign To
